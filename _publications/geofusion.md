@@ -18,6 +18,7 @@ selected: true
 display_order: 1
 paperurl: https://doi.org/10.1109/LRA.2026.3713729
 doi: 10.1109/LRA.2026.3713729
+codeurl: https://github.com/kehuitt/GeoFusion
 excerpt: Combines geometric consensus-aware cost aggregation with geometrically anchored
   feature rectification to improve multi-view depth estimation.
 tags:
