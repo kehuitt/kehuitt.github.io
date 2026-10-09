@@ -1,64 +1,39 @@
 ---
-layout: archive
-title: "CV"
+layout: research
+title: Curriculum Vitae
 permalink: /cv/
-author_profile: true
+author_profile: false
 redirect_from:
-  - /resume
+- /resume
+- /resume/
 ---
 
-{% include base_path %}
+## Education
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+**Peking University** — Master's student, 2025–2028 (expected)<br>
+[Open Lab on Human Robot Interaction (PKU-HRI)](https://robotics.pkusz.edu.cn/en)<br>
+Advisor: [Prof. Hong Liu](https://robotics.pkusz.edu.cn/team/leaderENG/)
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+**South China Normal University** — Undergraduate study in Artificial Intelligence<br>
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+## Research interests
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+Multimodal AI, large language models, and embodied AI. Related experience includes visual geometry, trajectory prediction, and retrieval-augmented generation.
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+## Selected research
+
+{% assign projects = site.portfolio | sort: 'display_order' %}
+{% for project in projects %}
+### [{{ project.title }}]({{ project.url | relative_url }})
+
+{{ project.excerpt }}
+
+{% endfor %}
+
+## Publications
+
+{% include publication-list.html status="published" %}
+
+## Profiles
+
+[Google Scholar](https://scholar.google.com/citations?user=ZvQiaNAAAAAJ&hl=en) · [ORCID](https://orcid.org/0009-0001-5241-9028) · [GitHub](https://github.com/kehuitt)

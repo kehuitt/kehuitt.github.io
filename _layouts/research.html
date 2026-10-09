@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.url != '/' %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/images/kt.svg' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="site-shell">
+  <header class="site-header">
+    <nav aria-label="Main navigation">
+    {% for item in site.data.navigation.main %}
+      <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title | escape }}</a>
+    {% endfor %}
+    </nav>
+  </header>
+  <main id="main" class="{% if page.url == '/' %}home{% else %}document{% endif %}">
+    {% unless page.url == '/' or page.hide_heading %}<div class="document-heading"><p class="eyebrow">{% if page.collection == 'publications' %}Publication{% elsif page.collection == 'portfolio' %}Research project{% else %}Kehui Tan{% endif %}</p><h1>{{ page.title | escape }}</h1></div>{% endunless %}
+    <div class="page-content">{{ content }}</div>
+  </main>
+  <footer class="site-footer"><span>© {{ site.time | date: '%Y' }} Kehui Tan</span><span><a href="{{ site.author.googlescholar | escape }}">Scholar</a><a href="https://github.com/kehuitt">GitHub</a></span></footer>
+</div>
+</body>
+</html>

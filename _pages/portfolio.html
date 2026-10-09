@@ -1,14 +1,19 @@
 ---
-layout: archive
-title: "Portfolio"
-permalink: /portfolio/
-author_profile: true
+layout: research
+title: Research
+permalink: /research/
+author_profile: false
+redirect_from:
+- /portfolio/
 ---
 
-{% include base_path %}
+Projects associated with my published research.
 
-
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
+{% assign projects = site.portfolio | sort: 'display_order' %}
+{% for project in projects %}
+<article class="project-row">
+  <h2><a href="{{ project.url | relative_url }}">{{ project.title | escape }}</a></h2>
+  <p>{{ project.excerpt | escape }}</p>
+  <a href="{{ project.url | relative_url }}">Project details and publication →</a>
+</article>
 {% endfor %}
-

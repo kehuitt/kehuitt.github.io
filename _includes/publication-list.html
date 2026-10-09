@@ -1,0 +1,8 @@
+{% assign papers = site.publications | sort: 'display_order' %}
+{% for paper in papers %}
+{% if paper.status == include.status %}
+{% if include.selected != true or paper.selected == true %}
+{% include research-card.html paper=paper %}
+{% endif %}
+{% endif %}
+{% endfor %}
